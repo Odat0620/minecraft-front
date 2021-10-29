@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  front:
+    build:
+      context: ./front
+    ports:
+      - 3000:3000
+    volumes:
+      - ./front:/usr/src/front
+    command: sh -c "yarn dev"
