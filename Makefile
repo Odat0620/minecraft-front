@@ -8,4 +8,4 @@ init: # 初期化
 	docker-compose run --rm front yarn install
 	docker-compose down
 yarn-install: # ライブラリインストール
-	docker-compose run --rm front yarn istall
+	docker-compose run --rm front yarn install
