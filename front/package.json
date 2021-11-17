@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest",
+    "json-server": "node server.js"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.10",
@@ -15,14 +17,20 @@
     "@emotion/styled": "^11",
     "axios": "^0.24.0",
     "framer-motion": "4.1.11",
+    "moment": "^2.29.1",
     "next": "12.0.1",
     "nookies": "^2.5.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
-    "recoil": "^0.4.1"
+    "recoil": "^0.4.1",
+    "swr": "^1.0.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@types/jest": "^27.0.2",
     "@types/node": "16.11.6",
     "@types/react": "17.0.33",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
@@ -30,7 +38,17 @@
     "eslint": "7",
     "eslint-config-next": "12.0.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-jest": "^25.2.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-testing-library": "^5.0.0",
+    "jest": "^27.3.1",
+    "json-server": "^0.17.0",
     "prettier": "^2.3.0",
+    "ts-jest": "^27.0.7",
     "typescript": "4.4.4"
   },
   "prettier": {

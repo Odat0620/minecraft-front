@@ -1,2 +1,5 @@
 next.config.js
 node_modules
+server.js
+jest.config.js
+**/*.d.ts

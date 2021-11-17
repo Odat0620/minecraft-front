@@ -1,0 +1,183 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "夢のマイホーム",
+      "userId": 1,
+      "likeCounts": 5,
+      "commentCounts": 2,
+      "status": true,
+      "createdAt": "2021-11-05T11:21:01.208+09:00"
+    },
+    {
+      "id": 2,
+      "title": "とんでもない回路を作っちまった",
+      "userId": 2,
+      "likeCounts": 10,
+      "commentCounts": 2,
+      "status": true,
+      "createdAt": "2021-11-06T12:21:01.208+09:00"
+    },
+    {
+      "id": 3,
+      "title": "全てを破壊できます",
+      "userId": 3,
+      "likeCounts": 0,
+      "commentCounts": 2,
+      "status": false,
+      "createdAt": "2021-11-06T13:21:01.208+09:00"
+    },
+    {
+      "id": 4,
+      "title": "自動収穫機",
+      "userId": 7,
+      "likeCounts": 0,
+      "commentCounts": 2,
+      "status": true,
+      "createdAt": "2021-11-07T13:21:01.208+09:00"
+    },
+    {
+      "id": 5,
+      "title": "トロッコ駅",
+      "userId": 14,
+      "likeCounts": 0,
+      "commentCounts": 2,
+      "status": true,
+      "createdAt": "2021-11-08T13:21:01.208+09:00"
+    },
+    {
+      "id": 6,
+      "title": "椅子の作り方",
+      "userId": 100,
+      "likeCounts": 0,
+      "commentCounts": 2,
+      "status": true,
+      "createdAt": "2021-11-09T13:21:01.208+09:00"
+    },
+    {
+      "id": 7,
+      "title": "水流エレベーター",
+      "userId": 29,
+      "likeCounts": 0,
+      "commentCounts": 2,
+      "status": true,
+      "createdAt": "2021-11-10T13:21:01.208+09:00"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "スティーブ",
+      "email": "steve@email.com",
+      "postCounts": 3,
+      "status": true,
+      "createdAt": "2021-11-01T11:21:01.208+09:00"
+    },
+    {
+      "id": 2,
+      "name": "ゾンビ",
+      "email": "zombie@email.com",
+      "postCounts": 3,
+      "status": true,
+      "createdAt": "2021-11-02T11:21:01.208+09:00"
+    },
+    {
+      "id": 3,
+      "name": "スケルトン",
+      "email": "skeleton@email.com",
+      "postCounts": 3,
+      "status": true,
+      "createdAt": "2021-11-03T11:21:01.208+09:00"
+    },
+    {
+      "id": 4,
+      "name": "クリーパー",
+      "email": "creeper@email.com",
+      "postCounts": 3,
+      "status": true,
+      "createdAt": "2021-11-04T11:21:01.208+09:00"
+    },
+    {
+      "id": 5,
+      "name": "エンダーマン",
+      "email": "enderman@email.com",
+      "postCounts": 3,
+      "status": false,
+      "createdAt": "2021-11-05T11:21:01.208+09:00"
+    },
+    {
+      "id": 6,
+      "name": "クモ",
+      "email": "spider@email.com",
+      "postCounts": 3,
+      "status": true,
+      "createdAt": "2021-11-06T11:21:01.208+09:00"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "postId": 1,
+      "userId": 4,
+      "name": "クリーパー",
+      "body": "いい家ですね、リフォームするともっと良くなると思います。",
+      "status": true,
+      "createdAt": "2021-11-02T11:21:01.208+09:00"
+    },
+    {
+      "id": 300,
+      "postId": 2,
+      "userId": 1,
+      "name": "スティーブ",
+      "body": "この回路はとんでもねえ",
+      "status": true,
+      "createdAt": "2021-11-02T11:21:01.208+09:00"
+    },
+    {
+      "id": 2000,
+      "postId": 4,
+      "userId": 2,
+      "name": "ゾンビ",
+      "body": "すごい装置ですね。これがあればマイクラライフが捗りますね。",
+      "status": true,
+      "createdAt": "2021-11-03T11:20:01.208+09:00"
+    }
+  ],
+  "notices": [
+    {
+      "id": 1,
+      "title": "【お知らせ】サイト開設しました",
+      "body": "本日よりサイト開設しました。",
+      "status": true,
+      "createdAt": "2021-11-01T11:21:01.208+09:00"
+    },
+    {
+      "id": 2,
+      "title": "【更新】サイトを更新しました。",
+      "body": "サイト更新しました。",
+      "status": true,
+      "createdAt": "2021-11-02T11:21:01.208+09:00"
+    },
+    {
+      "id": 3,
+      "title": "【重要】サイト復旧しました",
+      "body": "サイト復旧しました。",
+      "status": true,
+      "createdAt": "2021-11-03T11:21:01.208+09:00"
+    },
+    {
+      "title": "test",
+      "status": true,
+      "body": "test",
+      "createdAt": 1636630141979,
+      "id": 4
+    },
+    {
+      "title": "dd",
+      "status": true,
+      "body": "dd",
+      "createdAt": 1636630805047,
+      "id": 5
+    }
+  ]
+}
