@@ -4,8 +4,8 @@ const theme = extendTheme({
   styles: {
     global: {
       "html, body": {
-        backgroundColor: "gray.100",
-        color: "gray.800",
+        backgroundColor: "#6F574B",
+        color: "#6F574B",
         fontFamily: '"Noto Sans JP", Meiryo, sans-serif',
       },
     },
