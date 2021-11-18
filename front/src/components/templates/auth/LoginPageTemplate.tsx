@@ -6,31 +6,17 @@ import { FontSize } from "@/theme/FontSize";
 import { AuthInputBox } from "@/components/molecules/AuthInputBox";
 
 type Props = {
-  nameValue: string;
-  nameOnChange: (e: ChangeEvent<HTMLInputElement>) => void;
   emailValue: string;
   emailOnChange: (e: ChangeEvent<HTMLInputElement>) => void;
   passwordValue: string;
   passwordOnChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  confirmPasswordValue: string;
-  confirmPasswordOnChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  onClickRegister: () => void;
+  onClickLogin: () => void;
   loading: boolean;
 };
 
-export const RegisterPageTemplate: VFC<Props> = (props) => {
-  const {
-    nameValue,
-    nameOnChange,
-    emailValue,
-    emailOnChange,
-    passwordValue,
-    passwordOnChange,
-    confirmPasswordValue,
-    confirmPasswordOnChange,
-    onClickRegister,
-    loading,
-  } = props;
+export const LoginPageTemplate: VFC<Props> = (props) => {
+  const { emailValue, emailOnChange, passwordValue, passwordOnChange, onClickLogin, loading } =
+    props;
 
   return (
     <Flex justify="center" align="center">
@@ -46,41 +32,26 @@ export const RegisterPageTemplate: VFC<Props> = (props) => {
         shadow="md"
       >
         <Heading as="h1" fontSize={FontSize.h1} textAlign="center" mb="40px" fontWeight="bold">
-          ユーザー登録
+          ログイン
         </Heading>
 
         <Stack spacing="40px" align="center">
-          <AuthInputBox type="text" value={nameValue} onChange={nameOnChange}>
-            名前
-          </AuthInputBox>
           <AuthInputBox type="email" value={emailValue} onChange={emailOnChange}>
             メールアドレス
           </AuthInputBox>
-          <AuthInputBox
-            type="password"
-            placeholder="○○文字以上"
-            value={passwordValue}
-            onChange={passwordOnChange}
-          >
+          <AuthInputBox type="password" value={passwordValue} onChange={passwordOnChange}>
             パスワード
           </AuthInputBox>
-          <AuthInputBox
-            type="password"
-            placeholder="パスワードをもう一度入力してください。"
-            value={confirmPasswordValue}
-            onChange={confirmPasswordOnChange}
-          >
-            パスワード確認
-          </AuthInputBox>
           <Divider borderColor={{ base: "#ffe7d4", md: "#AC9386" }} />
+
           <PrimaryButton
             size="lg"
-            w={{ base: "100%", md: "" }}
+            w="100%"
             isLoading={loading}
             disabled={loading}
-            onClick={onClickRegister}
+            onClick={onClickLogin}
           >
-            登録
+            ログイン
           </PrimaryButton>
         </Stack>
       </Box>
