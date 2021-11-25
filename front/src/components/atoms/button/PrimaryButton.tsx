@@ -9,7 +9,7 @@ export const PrimaryButton: VFC<ButtonProps> = (props) => {
       boxShadow="0px 2px 6px 2px rgba(56, 36, 35, 0.3)"
       borderRadius="8px"
       _hover={{ opacity: 0.8 }}
-      _focus={{ outlineColor: "#E78123" }}
+      _focus={{ boxShadow: "0px 0px 1px 2px #E78123" }}
       _active={{ shadow: "none" }}
       {...props}
     />

@@ -1,7 +1,7 @@
 import { VFC, ChangeEvent } from "react";
 import { Box, Flex, Stack, Heading, Divider } from "@chakra-ui/react";
 
-import { PrimaryButton } from "@/components/atoms/PrimaryButton";
+import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
 import { FontSize } from "@/theme/FontSize";
 import { AuthInputBox } from "@/components/molecules/AuthInputBox";
 
@@ -33,16 +33,16 @@ export const RegisterPageTemplate: VFC<Props> = (props) => {
   } = props;
 
   return (
-    <Flex justify="center" align="center">
+    <Flex justify="center" align="center" px={{ base: "2%", md: "none" }}>
       <Box
         mt={{ base: "2em", md: "3em" }}
         mx="auto"
         w={{ base: "100%", md: "40em" }}
         h="fit-content"
         py="40px"
-        px={{ base: "none", md: "5%" }}
+        px={{ base: "3%", md: "5%" }}
         bg="#ffe7d4"
-        borderRadius={{ base: "none", md: "8px" }}
+        borderRadius={{ base: "6px", md: "8px" }}
         shadow="md"
       >
         <Heading as="h1" fontSize={FontSize.h1} textAlign="center" mb="40px" fontWeight="bold">
