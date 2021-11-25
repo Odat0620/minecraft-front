@@ -1,37 +1,24 @@
 import { VFC } from "react";
 import Link from "next/link";
 import Router from "next/router";
-import { Tooltip } from "@chakra-ui/react";
 import { Flex, Heading, Stack, LinkBox, LinkOverlay } from "@chakra-ui/layout";
-import { Button } from "@chakra-ui/button";
-import { FaPowerOff } from "react-icons/fa";
 
 import { client } from "@/api/axiosClient";
 import { useMessage } from "@/hooks/useMessage";
-
-const HeaderLink = (props: { text: string; link: string }) => {
-  const { text, link } = props;
-
-  return (
-    <Heading
-      fontSize="xl"
-      transition="all 0.3s"
-      _hover={{ cursor: "pointer", textShadow: "0px 0px 10px #aaa" }}
-    >
-      <Link href={link}>{text}</Link>
-    </Heading>
-  );
-};
-
-const headerLinks = [
-  { text: "投稿", link: "/" },
-  { text: "ユーザー", link: "/users" },
-  { text: "コメント", link: "/comments" },
-  { text: "お知らせ", link: "/notices" },
-];
+import { MainMenuButton } from "@/components/organisms/layouts/MainMenuButton";
+import { useCurrentUser } from "@/stores/user";
+import { SearchButton } from "@/components/atoms/button/SearchButton";
 
 export const Header: VFC = () => {
+  const { data: currentUser } = useCurrentUser();
   const { showMessage } = useMessage();
+
+  const onClickMypage = () => {
+    console.log(1);
+  };
+  const onClickSetting = () => {
+    console.log(2);
+  };
 
   const onClickLogout = () => {
     client
@@ -55,7 +42,7 @@ export const Header: VFC = () => {
         color="gray.50"
         align="center"
         justify="space-between"
-        padding={{ base: 2, md: 2 }}
+        px={{ base: "10px", md: "30px" }}
         shadow="md"
         pos="sticky"
         top="0"
@@ -63,38 +50,41 @@ export const Header: VFC = () => {
         w="100%"
         h="50px"
       >
+        <SearchButton display={{ base: "block", md: "none" }} />
+
         <LinkBox>
           <Flex
-            ml="30px"
             align="flex-end"
             transition="all 0.3s"
             _hover={{ cursor: "pointer", textShadow: "0px 0px 10px #aaa" }}
           >
-            <Heading as="h1" fontSize={{ base: "2xl", md: 30 }}>
+            <Heading as="h1" fontSize={{ base: "xl", md: 30 }}>
               <Link href="/" passHref>
                 <LinkOverlay>クラデザ</LinkOverlay>
               </Link>
             </Heading>
           </Flex>
         </LinkBox>
+
         <Flex>
-          <Stack alignItems="center" spacing="30px" direction="row">
-            {headerLinks.map((l) => (
-              <HeaderLink key={l.text} {...l} />
-            ))}
-            <Tooltip label="ログアウト">
-              <Button
-                fontSize="lg"
-                transition="all 0.3s"
-                bg="red.500"
-                borderRadius="full"
-                border="2px solid lightGray"
-                _hover={{ opacity: 0.8 }}
-                onClick={onClickLogout}
-              >
-                <FaPowerOff />
-              </Button>
-            </Tooltip>
+          <Stack alignItems="center" spacing={{ base: "none", md: "30px" }} direction="row">
+            <Heading
+              fontSize="xl"
+              transition="all 0.3s"
+              _hover={{ cursor: "pointer", color: "#F2BF91" }}
+              display={{ base: "none", md: "block" }}
+            >
+              <Link href="/">投稿一覧</Link>
+            </Heading>
+
+            <SearchButton display={{ base: "none", md: "block" }} />
+
+            <MainMenuButton
+              currentUser={currentUser}
+              onClickMypage={onClickMypage}
+              onClickSetting={onClickSetting}
+              onClickLogout={onClickLogout}
+            />
           </Stack>
         </Flex>
       </Flex>
