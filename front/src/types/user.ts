@@ -3,6 +3,7 @@ export type CurrentUserType = {
   name: string;
   email: string;
   profile: string;
+  avatar: string;
   createdAt: Date;
 };
 
@@ -10,5 +11,6 @@ export type UserType = {
   id: number;
   name: string;
   profile: string;
+  avatar: string;
   createdAt: Date;
 };
