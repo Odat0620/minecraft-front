@@ -3,7 +3,7 @@ import { Box, Flex, Stack, Heading, Divider } from "@chakra-ui/react";
 
 import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
 import { FontSize } from "@/theme/FontSize";
-import { AuthInputBox } from "@/components/molecules/AuthInputBox";
+import { LabelAndInputBox } from "@/components/molecules/LabelAndInputBox";
 
 type Props = {
   emailValue: string;
@@ -36,12 +36,12 @@ export const LoginPageTemplate: VFC<Props> = (props) => {
         </Heading>
 
         <Stack spacing="40px" align="center">
-          <AuthInputBox type="email" value={emailValue} onChange={emailOnChange}>
+          <LabelAndInputBox type="email" value={emailValue} onChange={emailOnChange}>
             メールアドレス
-          </AuthInputBox>
-          <AuthInputBox type="password" value={passwordValue} onChange={passwordOnChange}>
+          </LabelAndInputBox>
+          <LabelAndInputBox type="password" value={passwordValue} onChange={passwordOnChange}>
             パスワード
-          </AuthInputBox>
+          </LabelAndInputBox>
           <Divider borderColor={{ base: "#ffe7d4", md: "#AC9386" }} />
 
           <PrimaryButton
