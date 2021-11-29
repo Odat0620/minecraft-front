@@ -13,7 +13,7 @@ type Props = {
   onChange: ChangeEventHandler<HTMLInputElement>;
 };
 
-export const AuthInputBox: VFC<Props> = (props) => {
+export const LabelAndInputBox: VFC<Props> = (props) => {
   const { children, type, placeholder, value, onChange } = props;
 
   return (

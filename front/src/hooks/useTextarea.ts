@@ -1,4 +1,10 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, Dispatch, useState, SetStateAction } from "react";
+
+export type useTextareaType = {
+  value: string;
+  onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+  setValue: Dispatch<SetStateAction<string>>;
+};
 
 // valueとonChangeを返すカスタムフック
 export const useTextarea = (initialValue: string) => {

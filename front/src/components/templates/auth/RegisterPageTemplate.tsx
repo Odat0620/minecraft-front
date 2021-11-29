@@ -3,7 +3,7 @@ import { Box, Flex, Stack, Heading, Divider } from "@chakra-ui/react";
 
 import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
 import { FontSize } from "@/theme/FontSize";
-import { AuthInputBox } from "@/components/molecules/AuthInputBox";
+import { LabelAndInputBox } from "@/components/molecules/LabelAndInputBox";
 
 type Props = {
   nameValue: string;
@@ -50,28 +50,28 @@ export const RegisterPageTemplate: VFC<Props> = (props) => {
         </Heading>
 
         <Stack spacing="40px" align="center">
-          <AuthInputBox type="text" value={nameValue} onChange={nameOnChange}>
+          <LabelAndInputBox type="text" value={nameValue} onChange={nameOnChange}>
             名前
-          </AuthInputBox>
-          <AuthInputBox type="email" value={emailValue} onChange={emailOnChange}>
+          </LabelAndInputBox>
+          <LabelAndInputBox type="email" value={emailValue} onChange={emailOnChange}>
             メールアドレス
-          </AuthInputBox>
-          <AuthInputBox
+          </LabelAndInputBox>
+          <LabelAndInputBox
             type="password"
             placeholder="○○文字以上"
             value={passwordValue}
             onChange={passwordOnChange}
           >
             パスワード
-          </AuthInputBox>
-          <AuthInputBox
+          </LabelAndInputBox>
+          <LabelAndInputBox
             type="password"
             placeholder="パスワードをもう一度入力してください。"
             value={confirmPasswordValue}
             onChange={confirmPasswordOnChange}
           >
             パスワード確認
-          </AuthInputBox>
+          </LabelAndInputBox>
           <Divider borderColor={{ base: "#ffe7d4", md: "#AC9386" }} />
           <PrimaryButton
             size="lg"

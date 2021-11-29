@@ -1,4 +1,10 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, Dispatch, SetStateAction } from "react";
+
+export type useInputType = {
+  value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  setValue: Dispatch<SetStateAction<string>>;
+};
 
 // valueとonChangeを返すカスタムフック
 export const useInput = (initialValue: string) => {
