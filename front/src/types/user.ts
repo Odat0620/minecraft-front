@@ -1,10 +1,9 @@
 export type CurrentUserType = {
-  id: number;
+  id: number | null;
   name: string;
   email: string;
   profile: string;
   avatar: string;
-  createdAt: Date;
 };
 
 export type UserType = {
