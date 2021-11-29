@@ -10,12 +10,22 @@ server.use(middlewares);
 // You can use the one used by JSON Server
 server.use(jsonServer.bodyParser);
 server.use((req, res, next) => {
+  if (req.url === "/login") {
+    req.method = "GET";
+  }
   if (req.method === "POST") {
     req.body.createdAt = Date.now();
   }
   // Continue to JSON Server router
   next();
 });
+
+server.use(
+  jsonServer.rewriter({
+    "/sanctum/csrf-cookie": "/login",
+    "/me": "/login"
+  }),
+);
 
 // Use default router
 server.use(router);

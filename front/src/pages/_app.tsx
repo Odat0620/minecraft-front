@@ -4,6 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import "../styles/globals.css";
 import theme from "@/theme/theme";
+import { HeaderLayout } from "@/components/templates/HeaderLayout";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -17,7 +18,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           },
         }}
       >
-        <Component {...pageProps} />
+        <HeaderLayout>
+          <Component {...pageProps} />
+        </HeaderLayout>
       </SWRConfig>
     </ChakraProvider>
   );

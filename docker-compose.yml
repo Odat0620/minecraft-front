@@ -6,8 +6,8 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./front:/usr/src/front
-      - node_modules:/usr/src/front/node_modules
+      - ./front:/usr/src/front:cached
+      - node_modules:/usr/src/front/node_modules:cached
     command: sh -c "yarn dev"
 
 volumes:
