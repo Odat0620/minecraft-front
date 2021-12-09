@@ -11,8 +11,21 @@
       "id": 1,
       "title": "夢のマイホーム",
       "userId": 1,
+      "version": ["Java版", "統合版"],
       "likeCounts": 5,
       "commentCounts": 2,
+      "image": "https://source.unsplash.com/LTQMgx8tYqM",
+      "body": "僕の理想の家を作りました。とてもいいので是非参考にして下さい。",
+      "recipe": [
+        {
+          "processTitle": "工程1",
+          "processBody": "作業内容1"
+        },
+        {
+          "processTitle": "工程2",
+          "processBody": "作業内容2"
+        }
+      ],
       "status": true,
       "createdAt": "2021-11-05T11:21:01.208+09:00"
     },
@@ -22,6 +35,19 @@
       "userId": 2,
       "likeCounts": 10,
       "commentCounts": 2,
+      "version": ["Java版"],
+      "image": "https://source.unsplash.com/v6EFToPzJzI",
+      "body": "とんでもない回路を作りました。とてもいいので是非参考にして下さい。汎用性抜群で何にでも使えます。トロッコでもトラップタワーでも自動収穫機でもなんでもおk",
+      "recipe": [
+        {
+          "processTitle": "工程1",
+          "processBody": "作業内容1"
+        },
+        {
+          "processTitle": "工程2",
+          "processBody": "作業内容2"
+        }
+      ],
       "status": true,
       "createdAt": "2021-11-06T12:21:01.208+09:00"
     },
@@ -31,42 +57,107 @@
       "userId": 3,
       "likeCounts": 0,
       "commentCounts": 2,
+      "version": ["Java版", "統合版"],
+      "image": "https://source.unsplash.com/N9RnWgVprzQ",
+      "body": "僕の理想の家を作りました。とてもいいので是非参考にして下さい。",
+      "recipe": [
+        {
+          "processTitle": "工程1",
+          "processBody": "作業内容1"
+        },
+        {
+          "processTitle": "工程2",
+          "processBody": "作業内容2"
+        }
+      ],
       "status": false,
       "createdAt": "2021-11-06T13:21:01.208+09:00"
     },
     {
       "id": 4,
       "title": "自動収穫機",
-      "userId": 7,
+      "userId": 4,
       "likeCounts": 0,
       "commentCounts": 2,
+      "version": ["統合版"],
+      "image": "https://source.unsplash.com/gXQEH1tia4U",
+      "body": "僕の理想の家を作りました。とてもいいので是非参考にして下さい。",
+      "recipe": [
+        {
+          "processTitle": "工程1",
+          "processBody": "作業内容1"
+        },
+        {
+          "processTitle": "工程2",
+          "processBody": "作業内容2"
+        }
+      ],
       "status": true,
       "createdAt": "2021-11-07T13:21:01.208+09:00"
     },
     {
       "id": 5,
       "title": "トロッコ駅",
-      "userId": 14,
+      "userId": 5,
       "likeCounts": 0,
       "commentCounts": 2,
+      "version": ["Java版", "統合版"],
+      "image": "https://source.unsplash.com/LTQMgx8tYqM",
+      "body": "僕の理想の家を作りました。とてもいいので是非参考にして下さい。",
+      "recipe": [
+        {
+          "processTitle": "工程1",
+          "processBody": "作業内容1"
+        },
+        {
+          "processTitle": "工程2",
+          "processBody": "作業内容2"
+        }
+      ],
       "status": true,
       "createdAt": "2021-11-08T13:21:01.208+09:00"
     },
     {
       "id": 6,
       "title": "椅子の作り方",
-      "userId": 100,
+      "userId": 6,
       "likeCounts": 0,
       "commentCounts": 2,
+      "version": ["Java版", "統合版"],
+      "image": "https://source.unsplash.com/LTQMgx8tYqM",
+      "body": "僕の理想の家を作りました。とてもいいので是非参考にして下さい。",
+      "recipe": [
+        {
+          "processTitle": "工程1",
+          "processBody": "作業内容1"
+        },
+        {
+          "processTitle": "工程2",
+          "processBody": "作業内容2"
+        }
+      ],
       "status": true,
       "createdAt": "2021-11-09T13:21:01.208+09:00"
     },
     {
       "id": 7,
       "title": "水流エレベーター",
-      "userId": 29,
+      "userId": 1,
       "likeCounts": 0,
       "commentCounts": 2,
+      "version": ["Java版", "統合版"],
+      "image": "https://source.unsplash.com/LTQMgx8tYqM",
+      "body": "僕の理想の家を作りました。とてもいいので是非参考にして下さい。",
+      "recipe": [
+        {
+          "processTitle": "工程1",
+          "processBody": "作業内容1"
+        },
+        {
+          "processTitle": "工程2",
+          "processBody": "作業内容2"
+        }
+      ],
       "status": true,
       "createdAt": "2021-11-10T13:21:01.208+09:00"
     }
@@ -77,7 +168,8 @@
       "name": "スティーブ",
       "email": "steve@email.com",
       "profile": "プロフィール1",
-      "createdAt": "2021-11-01T11:21:01.208+09:00"
+      "createdAt": "2021-11-01T11:21:01.208+09:00",
+      "status": true
     },
     {
       "id": 2,
@@ -120,22 +212,28 @@
       "id": 1,
       "postId": 1,
       "userId": 4,
-      "name": "クリーパー",
+      "user": {
+        "id": 4,
+        "name": "クリーパー"
+      },
       "body": "いい家ですね、リフォームするともっと良くなると思います。",
       "status": true,
       "createdAt": "2021-11-02T11:21:01.208+09:00"
     },
     {
-      "id": 300,
-      "postId": 2,
-      "userId": 1,
-      "name": "スティーブ",
+      "id": 2,
+      "postId": 1,
+      "userId": 2,
+      "user": {
+        "id": 2,
+        "name": "ゾンビ"
+      },
       "body": "この回路はとんでもねえ",
       "status": true,
       "createdAt": "2021-11-02T11:21:01.208+09:00"
     },
     {
-      "id": 2000,
+      "id": 3,
       "postId": 4,
       "userId": 2,
       "name": "ゾンビ",
