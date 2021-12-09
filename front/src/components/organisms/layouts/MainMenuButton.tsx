@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/modal";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-import { MainMenuItems } from "@/components/molecules/MainMenuItems";
+import { MainMenuItems } from "@/components/organisms/layouts/MainMenuItems";
 import { CurrentUserType } from "@/types/user";
 
 type Props = {
@@ -35,8 +35,8 @@ export const MainMenuButton: VFC<Props> = (props) => {
           <>
             <MenuButton
               display={{ base: "none", md: "block" }}
-              h="40px"
-              w="40px"
+              h="36px"
+              w="36px"
               cursor="pointer"
               as={Avatar}
               icon={
@@ -76,7 +76,7 @@ export const MainMenuButton: VFC<Props> = (props) => {
               display={{ base: "flex", md: "none" }}
               aria-label="メニューアイコン"
               bg="inherit"
-              color="gray.50"
+              color="inherit"
               icon={<GiHamburgerMenu fontSize="1.6em" />}
               _hover={{ bg: "inherit", color: "#F2BF91" }}
               _focus={{ outlineColor: "#F2BF91", color: "#F2BF91" }}

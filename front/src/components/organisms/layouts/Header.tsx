@@ -1,9 +1,9 @@
 import { VFC } from "react";
 import Link from "next/link";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import { Flex, Heading, Stack, LinkBox, LinkOverlay } from "@chakra-ui/layout";
 
-import { client } from "@/api/axiosClient";
+import { Create } from "@/api/axiosClient";
 import { useMessage } from "@/hooks/useMessage";
 import { MainMenuButton } from "@/components/organisms/layouts/MainMenuButton";
 import { useCurrentUser } from "@/stores/user";
@@ -12,17 +12,17 @@ import { SearchButton } from "@/components/atoms/button/SearchButton";
 export const Header: VFC = () => {
   const { data: currentUser } = useCurrentUser();
   const { showMessage } = useMessage();
+  const router = useRouter();
 
   const onClickMypage = () => {
-    console.log(1);
+    router.push(`/users/${currentUser?.id}`);
   };
   const onClickSetting = () => {
-    console.log(2);
+    router.push("/users/edit");
   };
 
   const onClickLogout = () => {
-    client
-      .post("/logout")
+    Create("/logout")
       .then((res) => {
         console.log(res.data);
         Router.push("/");
@@ -38,17 +38,18 @@ export const Header: VFC = () => {
     <>
       <Flex
         as="nav"
-        bg="#888F00"
-        color="gray.50"
+        bg="linear-gradient(-20deg,#e69216, #fa6f2e)"
+        color="white"
         align="center"
         justify="space-between"
+        borderBottom="4px solid #888f00"
         px={{ base: "10px", md: "30px" }}
         shadow="md"
         pos="sticky"
         top="0"
         zIndex="1000"
         w="100%"
-        h="50px"
+        h="46px"
       >
         <SearchButton display={{ base: "block", md: "none" }} />
 

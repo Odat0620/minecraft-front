@@ -23,10 +23,21 @@ export const MainMenuItems: VFC<Props> = (props) => {
   const { isLoggedIn, onClickMypage, onClickSetting, onClickLogout, onClose, isMobile } = props;
   const router = useRouter();
 
+  const onClickMypageWithOnClose = () => {
+    onClose();
+    onClickMypage();
+  };
+
+  const onClickSettingWithOnClose = () => {
+    onClose();
+    onClickSetting();
+  };
+
   const onClickLogin = () => {
     onClose();
     router.push("/login");
   };
+
   const onClickRegister = () => {
     onClose();
     router.push("/register");
@@ -40,14 +51,14 @@ export const MainMenuItems: VFC<Props> = (props) => {
             <MenuItemOrangeColor
               h="3em"
               icon={<CgProfile fontSize="1.6em" />}
-              onClick={onClickMypage}
+              onClick={onClickMypageWithOnClose}
             >
               マイページ
             </MenuItemOrangeColor>
             <MenuItemOrangeColor
               h="3em"
               icon={<FiSettings fontSize="1.6em" />}
-              onClick={onClickSetting}
+              onClick={onClickSettingWithOnClose}
             >
               プロフィール設定
             </MenuItemOrangeColor>
