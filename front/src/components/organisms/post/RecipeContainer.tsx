@@ -34,7 +34,7 @@ export const RecipeContainer: VFC<Props> = (props) => {
               <Text>{process.processBody}</Text>
             </Flex>
             <Image
-              maxH={{ base: "200px", md: "500px" }}
+              maxH="500px"
               objectFit="contain"
               borderRadius="3px"
               alt={`手順${index + 1}`}

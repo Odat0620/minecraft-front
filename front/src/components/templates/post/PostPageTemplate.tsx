@@ -13,6 +13,8 @@ import { CreateComment } from "@/components/organisms/post/CreateComment";
 import { UserNameAndAvatar } from "@/components/molecules/UserNameAndAvatar";
 import { RecipeContainer } from "@/components/organisms/post/RecipeContainer";
 import { GameVersion } from "@/components/molecules/GameVersion";
+import { PostControlButton } from "@/components/organisms/post/PostControlButton";
+import { FontSize } from "@/theme/FontSize";
 
 type Props = {
   post: PostType;
@@ -31,25 +33,33 @@ export const PostPageTemplate: VFC<Props> = (props) => {
             <Stack w="full" align="center" spacing="1em">
               <Image borderRadius="8px" src={post.image} alt="main-image" />
               <Box w="full" lineHeight="2em">
-                <Heading as="h1" fontSize="xl" w="full" textAlign="left">
+                <Heading as="h1" fontSize={FontSize.h2} w="full" textAlign="left">
                   {post.title}
                 </Heading>
 
                 <Flex w="full" justify="space-between" align="center">
-                  <Text w="fit-content" textAlign="left" fontSize="0.9em" whiteSpace="pre-wrap">
+                  <Text
+                    w="fit-content"
+                    textAlign="left"
+                    fontSize={{ base: "0.9em", md: "1rem" }}
+                    whiteSpace="pre-wrap"
+                  >
                     {moment(post.createdAt).format("YYYY.MM.DD  H:mm")}
                   </Text>
 
                   <GameVersion version={post.version} />
                 </Flex>
               </Box>
-              <Flex w="full">
+              <Flex justify="space-between" w="full">
                 <UserNameAndAvatar
                   name={post.user.name}
                   avatar={post.user.avatar}
                   cursor="pointer"
                   onClick={() => onClickUser(post.user.id)}
                 />
+                {post.userId === currentUser?.id && (
+                  <PostControlButton post={post} currentUser={currentUser} />
+                )}
               </Flex>
             </Stack>
 

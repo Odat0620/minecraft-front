@@ -19,7 +19,7 @@ export const UserNameAndAvatar: VFC<Props> = (props) => {
       _hover={{ cursor: cursor, opacity: 0.6 }}
       onClick={onClick}
     >
-      <Avatar src={avatar} h="30px" w="30px" mr="4px" />
+      <Avatar src={avatar} h="30px" w="30px" mr="4px" bg="#6F574B" showBorder borderColor="#AC9386" />
       <Text fontSize="0.9em" isTruncated>
         {name}
       </Text>

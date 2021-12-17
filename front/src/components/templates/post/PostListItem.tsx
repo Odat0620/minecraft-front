@@ -11,15 +11,22 @@ import { UserNameAndAvatar } from "@/components/molecules/UserNameAndAvatar";
 
 type Props = {
   post: PostListType;
+  user?: {
+    id: number;
+    name: string;
+    avatar?: string;
+  };
   onClick: () => void;
 };
 
 export const PostListItem: VFC<Props> = (props) => {
-  const { post, onClick } = props;
+  const { post, user, onClick } = props;
+  const postUser = user || post.user;
 
   return (
     <Box
-      w={{ base: "full", md: "428px" }}
+      m="0.5em"
+      w="full"
       position="relative"
       boxShadow="md"
       cursor="pointer"
@@ -57,13 +64,29 @@ export const PostListItem: VFC<Props> = (props) => {
         borderTop="0"
         borderBottomRadius="6px"
       >
-        <Heading w="full" as="h2" fontSize="xl">
+        <Heading
+          w="full"
+          as="h2"
+          fontSize="md"
+          fontWeight="900"
+          display="-webkit-box"
+          overflow="hidden"
+          noOfLines={2}
+        >
           {post.title}
         </Heading>
-        <Text w="full" py="0.25rem" fontSize="sm">
-          {post.body.length > 50 ? `${post.body.substr(0, 50)}...` : post.body}
+        <Text
+          h="calc(1.5 * 0.875rem * 3)"
+          w="full"
+          py="0.25rem"
+          fontSize="sm"
+          lineHeight="1.5em"
+          overflow="hidden"
+          noOfLines={3}
+        >
+          {post.body}
         </Text>
-        <UserNameAndAvatar name={post.user.name} avatar={post.user.avatar} />
+        <UserNameAndAvatar name={postUser.name} avatar={postUser.avatar} />
         <Flex align="center" justify="space-between" fontSize="sm">
           <Text>{moment(post.createdAt).format("YYYY.MM.DD  H:mm")}</Text>
           <Stack direction="row" spacing="1em">

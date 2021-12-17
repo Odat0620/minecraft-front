@@ -6,7 +6,7 @@ export const ContentBox: VFC<BoxProps> = (props) => {
     <Box
       my={{ base: "1em", md: "2em" }}
       mx="auto"
-      w={{ base: "100%", md: "40em" }}
+      w={{ base: "100%", lg: "900px" }}
       h="fit-content"
       py={{ base: "20px", md: "30px" }}
       bg="#ffe7d4"
