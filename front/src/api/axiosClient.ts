@@ -8,11 +8,11 @@ export const client = axios.create({
   withCredentials: true,
 });
 
-export const Create = (url: string, data: any, config?: AxiosRequestConfig<any> | undefined) => {
+export const Create = (url: string, data?: any, config?: AxiosRequestConfig<any> | undefined) => {
   return client.post(url, data, config);
 };
 
-export const Update = (url: string, data: any, config?: AxiosRequestConfig<any> | undefined) => {
+export const Update = (url: string, data?: any, config?: AxiosRequestConfig<any> | undefined) => {
   return client.patch(url, data, config);
 };
 

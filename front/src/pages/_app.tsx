@@ -12,7 +12,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <SWRConfig
         value={{
           onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
-            if (error.status === 404) return;
+            if (error.message.match(/404/)) return;
+            // if (error.status === 404) return;
             if (retryCount >= 5) return;
             setTimeout(() => revalidate({ retryCount: retryCount + 1 }), 5000);
           },

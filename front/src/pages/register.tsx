@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import Router from "next/router";
 
 import { useInput } from "@/hooks/useInput";
-import { client } from "@/api/axiosClient";
+import { client, Create } from "@/api/axiosClient";
 import { useMessage } from "@/hooks/useMessage";
 import { RegisterPageTemplate } from "@/components/templates/auth/RegisterPageTemplate";
 
@@ -33,11 +33,9 @@ const Register: NextPage = () => {
       confirmPassword: confirmPassword.value,
     };
 
-    await client
-      .get("/sanctum/csrf-cookie")
+    await client("/sanctum/csrf-cookie")
       .then(() => {
-        client
-          .post("/register", registerParams)
+        Create("/register", registerParams)
           .then((res) => {
             console.log(res.data);
             Router.push("/");

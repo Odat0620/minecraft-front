@@ -10,6 +10,10 @@ import { Spinner } from "@chakra-ui/spinner";
 const User: NextPage = () => {
   const router = useRouter();
   const { data: user, isValidating } = useUserById({ userId: router.query.id as string });
+  const onClickPost = (id: number) => router.push(`/posts/${id}`);
+  const onClickSetting = () => {
+    router.push("/users/edit");
+  };
 
   if (isValidating) {
     return (
@@ -20,7 +24,7 @@ const User: NextPage = () => {
   }
 
   return user ? (
-    <UserPageTemplate user={user} />
+    <UserPageTemplate user={user} onClickPost={onClickPost} onClickSetting={onClickSetting} />
   ) : (
     <Box>
       <Text>ユーザーが見つかりませんでした。</Text>
