@@ -23,7 +23,10 @@ server.use((req, res, next) => {
 server.use(
   jsonServer.rewriter({
     "/sanctum/csrf-cookie": "/login",
-    "/me": "/login"
+    "/me": "/login",
+    "/posts": "/posts?_expand=user&_embed=comments",
+    "/posts/:id": `/posts/:id?_expand=user&_embed=comments`,
+    "/users/:id": `/users/:id?_embed=posts`,
   }),
 );
 
