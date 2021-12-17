@@ -1,3 +1,5 @@
+import { PostListType } from "@/types/post";
+
 export type CurrentUserType = {
   id: number | null;
   name: string;
@@ -12,4 +14,5 @@ export type UserType = {
   profile: string;
   avatar: string;
   createdAt: Date;
+  posts: Array<PostListType>;
 };
